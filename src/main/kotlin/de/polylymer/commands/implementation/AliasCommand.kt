@@ -91,6 +91,17 @@ object AliasCommand : SlashCommand(
                         }
                     }
                 }
+            } else {
+                Thread.sleep(50)
+                embed{
+                    title = "Error"
+                    description = "You don't have the Permission to execute this Command"
+                    color = Color(255,0,0)
+                    val foot = EmbedBuilder.Footer()
+                    foot.icon = interaction.guild().getIconUrl(Image.Format.GIF)!!
+                    foot.text = interaction.guild().name
+                    footer = foot
+                }
             }
 
         }
